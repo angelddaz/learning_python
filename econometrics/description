@@ -1,0 +1,47 @@
+This project uses data from bwght2.dta, which contains linked files of birth and infant death
+certificates with National Center for Health Statistics birth rate and mortality data.
+
+Col descriptions:
+--------------------------------------------------------------------------------------
+ storage display value
+variable name type format label variable label
+--------------------------------------------------------------------------------------
+mage byte %10.0g mother's age, years
+meduc byte %10.0g mother's educ, years
+monpre byte %10.0g month prenatal care began
+npvis byte %10.0g total number of prenatal visits
+fage byte %10.0g father's age, years
+feduc byte %10.0g father's educ, years
+bwght int %10.0g birth weight, grams
+omaps byte %10.0g one minute apgar score
+fmaps byte %10.0g five minute apgar score
+cigs byte %10.0g avg cigarettes per day
+drink byte %10.0g avg drinks per week
+lbw byte %9.0g =1 if bwght <= 2000
+vlbw byte %9.0g =1 if bwght <= 1500
+male byte %9.0g =1 if baby male
+mwhte byte %9.0g =1 if mother white
+mblck byte %9.0g =1 if mother black
+moth byte %9.0g =1 if mother is other
+fwhte byte %9.0g =1 if father white
+fblck byte %9.0g =1 if father black
+foth byte %9.0g =1 if father is other
+lbwght float %9.0g log(bwght)
+magesq int %9.0g mage^2
+npvissq int %9.0g npvis^2
+--------------------------------------------------------------------------------------
+The one - and five- minute APGAR scores are measures of the well-being of infants just after
+birth. An interesting feature of the score is that it is bounded between zero and 10, making a
+linear model less than ideal. Still, a linear model would be informative.
+
+Your task for this project is to discover the determinants of child health using birthweight or
+one of the APGAR scores as the outcome variable. Do NOT explain one with the other! You can
+analyze either outcome, either as a continuous variable, or as a binary outcome (low
+birthweight, or low APGAR score). There are a number of interesting covariates you can
+explore, on their own and as interactions, such as the number of prenatal visits, smoking and
+alcohol consumption (during pregnancy).
+
+A useful paper to provide background, both for interpretation and as suggestions for empirical
+specification, is: 
+Ellen Meara (2001): "Why is Health related to socio-economic status?" NBER Working Paper
+#8231
