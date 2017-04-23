@@ -1,0 +1,29 @@
+'''
+Created on Apr 23, 2017
+
+@author: angel
+3-5      DONE
+6-8      DONE
+9-10     DONE
+11-13    
+14-16    
+17-19    
+20-22    
+23-25    
+'''
+#CHAPTER 11
+#machine learning chapter
+
+'''
+What is a model? It’s simply a specification of a mathematical 
+(or probabilistic) relationship that exists between different variables. 
+'''
+import random
+
+def split_data(data, prob):
+    #split data into fraction [prob, 1 - prob]
+    results = [], []
+    for row in data:
+        results[0 if random.random() < prob else 1].append(row)
+    return results
+
