@@ -1,0 +1,28 @@
+'''
+Created on Apr 23, 2017
+
+@author: angel
+3-5      DONE
+6-8      DONE
+9-10     DONE
+11-13    DONE
+14-16    DONE
+17-19    HARD
+20-22    HARDEST
+23-25    EASIESTEST
+'''
+
+#Chapter 17: Decision Trees
+import math
+def entropy(class_probabilities):
+    return sum(-p * math.log(p, 2)
+               for p in class_probabilities
+               if p)
+
+from collections import Counter
+
+def class_probabilities(labels):
+    total_count = len(labels)
+    return [count / total_count
+            for count in Counter(labels).values()]
+
