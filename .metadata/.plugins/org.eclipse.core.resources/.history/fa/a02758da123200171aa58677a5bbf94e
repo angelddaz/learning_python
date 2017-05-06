@@ -1,0 +1,38 @@
+'''
+Created on May 5, 2017
+
+@author: angel
+'''
+import pandas as pd
+import matplotlib.pyplot as pl
+
+data = pd.read_csv(r'C:\Users\angel\OneDrive\Documents\data_training\data\RawDelData.csv')
+#scatter of all of the data
+
+ylabel = 'Order Amount'
+xlabel = 'Tip in $'
+
+#Creating a function so I don't have to duplicate code
+def create_scatter(df, title_name):
+    pl.scatter(df.Tip, df.OrderAmount)
+    pl.suptitle(title_name)
+    pl.title('n = %d' %df.count())
+    pl.ylabel(ylabel)
+    pl.xlabel(xlabel)
+    pl.show()
+
+angel_tip = data.loc[data['PersonWhoDelivered']=='Angel']
+create_scatter(angel_tip, 'All of Angel Deliveries')
+
+sam_tip = data.loc[data['PersonWhoDelivered']=='Sammie']
+create_scatter(angel_tip, 'All of Sam Deliveries')
+#two scatters for total Angel deliveries and Sam deliveries
+#Not very different on the face of it.
+
+angel_female = angel_tip.loc[angel_tip['GenderOfTipper'] == 'Female']
+create_scatter(angel_female, 'Angel Deliveries to Females')
+
+angel_male = angel_tip.loc[angel_tip['GenderOfTipper'] == 'Male']
+sam_female = sam_tip.loc[sam_tip['GenderOfTipper'] == 'Female']
+sam_male = sam_tip.loc[sam_tip['GenderOfTipper'] == 'Male']
+#four scatter plots for the breakdown of genders

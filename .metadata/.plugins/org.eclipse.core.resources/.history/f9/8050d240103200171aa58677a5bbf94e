@@ -1,0 +1,22 @@
+'''
+Created on May 5, 2017
+
+@author: angel
+'''
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv(r'C:\Users\angel\OneDrive\Documents\data_training\data\RawDelData.csv')
+#scatter of all of the data
+
+
+aDels = data.loc[data['PersonWhoDelivered']=='Angel'][['Tip']]
+sDels = data.loc[data['PersonWhoDelivered']=='Sammie'][['Tip']]
+#two scatters for total Angel deliveries and Sam deliveries
+
+
+angel_female = aDels.loc[aDels['GenderOfTipper'] == 'Female', 'Tip']
+angel_male = aDels.loc[aDels['GenderOfTipper'] == 'Male', 'Tip']
+sam_female = sDels.loc[sDels['GenderOfTipper'] == 'Female', 'Tip']
+sam_male = sDels.loc[sDels['GenderOfTipper'] == 'Male', 'Tip']
+#four scatter plots for the breakdown of genders

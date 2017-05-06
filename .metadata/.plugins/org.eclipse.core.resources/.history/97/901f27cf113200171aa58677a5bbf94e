@@ -1,0 +1,48 @@
+'''
+Created on May 5, 2017
+
+@author: angel
+'''
+import pandas as pd
+import matplotlib.pyplot as pl
+
+data = pd.read_csv(r'C:\Users\angel\OneDrive\Documents\data_training\data\RawDelData.csv')
+#scatter of all of the data
+
+
+ylabel = 'Order Amount'
+xlabel = 'Tip in $'
+
+angel_tip = data.loc[data['PersonWhoDelivered']=='Angel']
+pl.scatter(angel_tip.Tip, angel_tip.OrderAmount)
+pl.title('All of Angel deliveries')
+pl.ylabel(ylabel)
+pl.xlabel(xlabel)
+pl.show()
+
+sam_tip = data.loc[data['PersonWhoDelivered']=='Sammie']
+pl.scatter(sam_tip.Tip, sam_tip.OrderAmount)
+pl.title('All of Sams deliveries')
+pl.ylabel(ylabel)
+pl.xlabel(xlabel)
+pl.show()
+#two scatters for total Angel deliveries and Sam deliveries
+#Not very different on the face of it.
+
+#I seem to be repeating code here. I wonder if I can create a method for creating
+#these scatter plots
+
+def create_scatter(df):
+    pl.scatter(df.Tip, df.OrderAmount)
+    pl.title(df.tostring())
+    pl.ylabel(ylabel)
+    pl.xlabel(xlabel)
+    pl.show()
+
+
+angel_female = angel_tip.loc[angel_tip['GenderOfTipper'] == 'Female', 'Tip']
+
+angel_male = angel_tip.loc[angel_tip['GenderOfTipper'] == 'Male', 'Tip']
+sam_female = sam_tip.loc[sam_tip['GenderOfTipper'] == 'Female', 'Tip']
+sam_male = sam_tip.loc[sam_tip['GenderOfTipper'] == 'Male', 'Tip']
+#four scatter plots for the breakdown of genders
