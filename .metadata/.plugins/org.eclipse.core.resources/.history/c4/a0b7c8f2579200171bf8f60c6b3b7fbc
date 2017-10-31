@@ -1,0 +1,34 @@
+input:
+	2 1000 2000 Encyclopedia.txt
+
+output:
+	L1 cache with 1000 entries created.
+	L2 cache with 2000 entries created.
+	. . .
+	Number of L1 hits: 837461
+	L1 Hit rate: 62.15%
+
+	Number of L2 hits: 70844
+	L2 Hit rate: 13.89%
+
+	Total number of accesses: 1347451
+	Total number of hits: 908305
+	Overall hit rate: 67.41%
+
+
+input:
+	2 1000 5000 Encyclopedia.txt
+
+output:
+	L1 cache with 1000 entries created.
+	L2 cache with 5000 entries created.
+	. . .
+	Number of L1 hits: 837461
+	L1 Hit rate: 62.15%
+
+	Number of L2 hits: 159526
+	L2 Hit rate: 31.28%
+
+	Total number of accesses: 1347451
+	Total number of hits: 996987
+	Overall hit rate: 73.99%

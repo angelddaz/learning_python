@@ -1,0 +1,147 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Test {
+
+	// Text reader variables
+	private static File fileName;
+	private static Scanner fileScan;
+	private static String currLine;
+	private static StringTokenizer lineToken;
+	private static String word;
+
+	//Cache 1
+
+	private static int cacheSize1;
+	private static Cache<String> cache1 = null;
+	private static boolean found1 = false;
+	private static int hit1;
+	private static int wordCount1;
+
+	//Cache 2
+	private static int cacheSize2;
+	private static Cache<String> cache2 = null;
+	private static boolean found2 = false;	
+	private static int hit2;
+	private static int wordCount2;
+
+	public static void main(String[] args) {
+		try {
+			if(args[0].equals("1") || args[0].equals("2")) {
+				fileSearch(args);
+			}
+			else {
+				printCorrectUsage();
+				System.exit(1);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * This method searches through a txt file line by line and calls the cacheSearch method
+	 * the cacheSearch method holds the math for hits. This method is only for logic of command
+	 * line arguments and tokenizing the txt file.
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
+	private static void fileSearch(String[] args) throws FileNotFoundException{
+
+//		if(args[0].equals("2")){
+//			// a double cache
+//			if(cacheSize1 <= cacheSize2) {
+//				cacheSize1 = Integer.getInteger(args[1]); // filling up our variables with command line argument values
+//				cacheSize2 = Integer.getInteger(args[2]);
+//
+//				// TODO What if I put the following two caches in an array holding both of them.
+//				cache1 = new Cache<String>(cacheSize1);
+//				cache2 = new Cache<String>(cacheSize2);
+//
+//				// new String caches[][];
+//
+//				fileName = new File(args[3]);
+//				fileScan = new Scanner(args[3]); // is this right?
+//
+//				System.out.println("A cache with a size of " + cacheSize1 + ", has been created");
+//				System.out.println("A second cache with a size of " + cacheSize2 + ", has been created");
+//
+//				while (fileScan.hasNextLine()) {
+//					currLine = fileScan.nextLine(); // reading in a single line at a time
+//					lineToken = new StringTokenizer(currLine);
+//					while (lineToken.hasMoreTokens()) { // reading in token for each single line at a time
+//						String word = lineToken.nextToken();
+//						wordCount1++;
+//						found1 = false;
+//
+//						cache1.get(word); // a method for searching
+//					}
+//				}
+//			}
+//			else {
+//				// wrong cache sizes at input
+//				printCorrectUsage();
+//				System.err.println("[level 1 cache size] must be equal to or smaller than [level 2 cache size]");
+//				System.exit(1);
+//			}
+//		}
+		if(args[0].equals("1")){ // TODO do this one first:
+			// single chache
+
+			cacheSize1 = Integer.getInteger(args[1]);
+			cache1 = new Cache<String>(cacheSize1);
+			fileName = new File(args[2]);
+			fileScan = new Scanner(args[2]);
+			System.out.println("A single cache with a size of " + cacheSize1 + ", has been created");
+
+			cache1.get(word);
+
+
+			while (fileScan.hasNextLine()) {
+				currLine = fileScan.nextLine();
+				lineToken = new StringTokenizer(currLine);
+				while (lineToken.hasMoreTokens()) {
+					String word = lineToken.nextToken();
+					wordCount1++;
+					found1 = false;
+
+					cache1.get(word);
+				}
+			}
+		}
+		else {
+			printCorrectUsage();
+			System.exit(1);
+		}
+	}
+
+	/**
+	 * This method searches for a single word in a cache and then if
+	 * it doesn't find it, it searches a second cache if it exists.
+	 * It also keeps track of hits.
+	 */
+	private static void cacheSearch(String word) {
+		
+
+		System.out.println("Total number of references: " + wordCount1);
+		System.out.println("Total number of cache hits: " + hit1);
+		System.out.println("Cache hit ratio: " + (double)hit1/(double)wordCount1);
+	}
+
+
+
+	/**
+	 * This displays error message in the command line for the user
+	 * 
+	 */
+	private static void printCorrectUsage() {
+		System.err.println("Correct Usage for Command Prompt:");
+		System.err.println("$java Test 1 [cache size] [input txt file name]\n");
+		System.err.println("OR");
+		System.err.println("$java Test 2 [level 1 cache size] [level 2 cache size] [input txt file name]");
+	}
+
+}

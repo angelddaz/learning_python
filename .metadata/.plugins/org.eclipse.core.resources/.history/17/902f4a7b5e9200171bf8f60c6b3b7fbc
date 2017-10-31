@@ -1,0 +1,118 @@
+
+/**
+ * 
+ * @author angeldaz
+ * This class has all the methods that are used to create 
+ * and move around nodes inside a double linked list.
+ * @param <T>
+ */
+
+public class Cache<T> implements ICache<T>{
+	// Since Test.java has a "main", should i get rid of this one?
+
+	// TODO How to use DLLNode.java methods?
+
+	// TODO include a default constructor that creates
+	// an empty cache of capacity 100
+	// another constructor with a given capacity as a paramater
+	// and any other methods necessary for the operation of my cache
+
+	public Cache(){
+		int cacheSize = 100;
+	}
+
+	public Cache(int cacheSize1) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int size(){
+		return 0;
+		// return int
+	}
+
+	@Override
+	public T get(T target) {
+		// TODO list of cache methods called:
+
+		// TODO maybe a list of 1 or 2 before this for loop. 
+		// a small for loop in which each cache is searched
+		// if there are two and if the word is not found.
+//		for (int i = 1; i < cache1.size(); i++) { 
+//			if (cache1.get(i-1).equals(target)) {
+//				found1 = true;
+//				hit1++;
+//				cache1.hit(i-1);
+//			}
+//
+//			// else?
+//		}
+//		if (found1 == false) {
+//			// TODO search with second cache
+//			cache1.add(target);
+//		}
+		accesses++;
+		return null;
+
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void add(Object data) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeLast() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(Object target) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void write(Object data) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public double getHitRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getMissRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public int getHits() {
+		
+		return 0;
+	}
+	
+	public int getAccesses() {
+		
+		
+		return accesses;
+	}
+
+
+}

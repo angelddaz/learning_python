@@ -1,23 +1,12 @@
 -- VERSION_4
 -- START DISKCACHE_2
 C:\Users\angel\Documents\GitHub\learning_python\.metadata\.plugins\org.eclipse.core.resources\.projects\statistics\com.python.pydev.analysis\v2_indexcache
-visualizations.gender_scatter|1494044183363680000|C:\Users\angel\OneDrive\Documents\data_training\Workspace\statistics\visualizations\gender_scatter.py
 -- END DISKCACHE
 -- START DICTIONARY
-1
-1=visualizations.gender_scatter
+0
 -- END DICTIONARY
 -- START TREE 1
-9
-ade|0|
-ang|3|angel_tip!11@angel_male!11@angel_female!11@
-cre|1|create_scatter!10@
-dat|1|data!11@
-sam|3|sam_female!11@sam_male!11@sam_tip!11@
-sde|0|
-tit|0|
-xla|1|xlabel!11@
-yla|1|ylabel!11@
+0
 -- END TREE
 -- START TREE 2
 0

@@ -1,0 +1,66 @@
+Example results:
+
+input: 
+	1 5 small.txt
+
+output:
+	L1 cache with 5 entries created.
+	. . .
+	Number of L1 hits: 1
+	L1 Hit rate: 5.00%
+
+	Total number of accesses: 20
+	Total number of hits: 1
+	Overall hit rate: 5.00%
+
+
+input: 
+	2 5 10 small.txt
+
+output:
+	L1 cache with 5 entries created.
+	L2 cache with 10 entries created.
+	. . .
+	Number of L1 hits: 1
+	L1 Hit rate: 5.00%
+
+	Number of L2 hits: 0
+	L2 Hit rate: 0.00%
+
+	Total number of accesses: 20
+	Total number of hits: 1
+	Overall hit rate: 5.00%
+
+
+input: 
+	2 5 12 small.txt
+
+output: 
+	L1 cache with 5 entries created.
+	L2 cache with 12 entries created.
+	. . .
+	Number of L1 hits: 1
+	L1 Hit rate: 5.00%
+
+	Number of L2 hits: 2
+	L2 Hit rate: 10.53%
+
+	Total number of accesses: 20
+	Total number of hits: 3
+	Overall hit rate: 15.79%
+input: 
+	2 5 15 small.txt
+
+output: 
+	L1 cache with 5 entries created.
+	L2 cache with 15 entries created.
+	. . .
+	Number of L1 hits: 1
+	L1 Hit rate: 5.00%
+
+	Number of L2 hits: 3
+	L2 Hit rate: 15.79%
+
+	Total number of accesses: 20
+	Total number of hits: 4
+	Overall hit rate: 20.00%

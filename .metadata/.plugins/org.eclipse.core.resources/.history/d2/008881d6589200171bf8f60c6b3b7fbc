@@ -1,0 +1,82 @@
+
+/**
+ * 
+ * @author angeldaz
+ * This class has all the methods that are used to create 
+ * and move around nodes inside a double linked list.
+ * @param <T>
+ */
+
+public class Cache<T> implements ICache{
+		// Since Test.java has a "main", should i get rid of this one?
+	
+	// TODO How to use DLLNode.java methods?
+	
+	// TODO include a default constructor that creates
+	// an empty cache of capacity 100
+	// another constructor with a given capacity as a paramater
+	// and any other methods necessary for the operation of my cache
+		
+	public Cache(){
+		int cacheSize = 100;
+	}
+
+	public Cache(int cacheSize1) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Object get(Object target) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void add(Object data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeLast() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Object target) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void write(Object data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double getHitRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getMissRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

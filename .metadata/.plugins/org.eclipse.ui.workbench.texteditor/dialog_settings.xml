@@ -2,13 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
+		<item value="for (int i = 1; i &lt; cache1.size(); i++) { " key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="for (int i = 1; i &lt; cache1.size(); i++) { "/>
+			<item value="Dave Bui"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Angel D&apos;az"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

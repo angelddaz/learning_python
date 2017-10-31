@@ -1,0 +1,45 @@
+import java.util.StringTokenizer;
+
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
+public class SimpleDriver {
+
+	public static void main(String[] args) {
+		Cache<String> cache = new Cache<String>(5); 
+		
+		// "1", "5", "small.txt"
+		String input = "This is a testing text file for the CS321 programming assignment one."
+						+ "This assignment is to implement a cache abstract.";
+		
+
+
+
+		StringTokenizer st = new StringTokenizer(input);
+		System.out.println("L1 cache with " + args[1] + " entries created.");
+		System.out.println(". . .");
+		
+		//search
+		while(st.hasMoreTokens()){
+			cache.get(st.nextToken());
+		}
+		
+		
+		System.out.println("Number of L1 hits: " + cache.getHits()  );
+		System.out.println("L1 Hit rate: " + cache.getHitRate() + "%"); //formatting two decimal places
+		System.out.println();
+		System.out.println("Total number of accesses: " + cache.getAccesses()); // + cache2.getAccesses
+		System.out.println("Total number of hits: " );
+		System.out.println("Overall hit rate: " );
+		
+	}
+//	output:
+//		L1 cache with 5 entries created.
+//		. . .
+//		Number of L1 hits: 1
+//		L1 Hit rate: 5.00%
+//
+//		Total number of accesses: 20
+//		Total number of hits: 1
+//		Overall hit rate: 5.00%
+
+}

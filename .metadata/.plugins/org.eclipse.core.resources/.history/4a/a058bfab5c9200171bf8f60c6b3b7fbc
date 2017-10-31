@@ -1,0 +1,20 @@
+import java.util.StringTokenizer;
+
+public class SimpleDriver {
+
+	public static void main(String[] args) {
+		Cache<String> cache = new Cache<String>(5); 
+		
+		// "1", "5", "small.txt"
+		String input = "This is a testing text file for the CS321 programming assignment one."
+						+ "This assignment is to implement a cache abstract.";
+		
+
+
+
+		StringTokenizer st = new StringTokenizer(input);
+		
+		
+	}
+
+}
